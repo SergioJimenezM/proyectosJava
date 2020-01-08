@@ -22,8 +22,9 @@ public class Main {
 			}
 		}
 		
-		Nodo vector[] = vectorizador(inicio);
-		JOptionPane.showMessageDialog(null, imprimir(vector));
+		Nodo vector[] = vectorizador(inicio);/*convierte los nodos a un vector*/
+		
+		JOptionPane.showMessageDialog(null, imprimir(vector));/*se imprime el vector desordenado*/
 		
 		/*<<<<<<<-----ALGORITMO AQUI----->>>>>>>*/
 		 for (int i = 0; i < vector.length - 1; i++)
@@ -33,13 +34,19 @@ public class Main {
 		            if (vector[j].numero < vector[index].numero){/*buscando numero menor*/
 		                index = j;/*posicion del intercambio*/
 		            }
-		        Nodo numeroMenor/*guarda el mayor*/ = vector[index];/*Intercambio*/
-		        vector[index] = vector[i];/*pone el menor aqui*/
-		        vector[i] = numeroMenor;/*pone el numero mayor, donde estaba el menor*/
+		        Nodo numeroMenor/*guarda el menor*/ = vector[index];/*Intercambio*/
+		        vector[index] = vector[i];/*pone el mayor donde estaba el menor*/
+		        vector[i] = numeroMenor;/*pone el numero menor, donde estaba el mayor*/
 
 		    }
 		/*<<<<<<<-----FIN DE ALGORITMO----->>>>>>>*/
 		
+		 /*si se quiere que la lista esté ordenada permanentemente
+		  *solo se necesita recorrer el arreglo conectando los nodos de la forma
+		  *vector[i].sgt = vector[i+1];
+		  *enlazando la lista ahora que las posiciones estan ordenadas 
+		  */
+		 
 		JOptionPane.showMessageDialog(null, imprimir(vector));
 	}/*fin de constructor*/
 
